@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laura Prieto Psicología, psicóloga general sanitaria en Benetússer (València) y online</title>
+<meta name="description" content="Laura Prieto Climent, psicóloga general sanitaria especializada en psicología de la salud. Terapia individual, de pareja, infancia y adolescencia, estrés laboral y charlas para empresas. Presencial en Benetússer (València) y online.">
+<meta name="robots" content="noindex, nofollow"><!-- quitar al publicar -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#1B1A18;     /* negro de su marca */
+  --carbon-2:#26241F;
+  --topo:#8A8275;       /* gris topo de sus publicaciones */
+  --topo-claro:#B9B2A6;
+  --piedra:#ECE8E1;     /* fondo cálido claro */
+  --hueso:#F8F6F2;
+  --blanco:#FFFFFF;
+  --texto:#2A2824;
+  --texto-2:#615C53;
+  --coral:#EF6470;      /* el corazón de su publicación, solo como acento puntual */
+  --serif:"Playfair Display", Georgia, serif;
+  --sans:"Manrope", system-ui, sans-serif;
+  --ancho:1240px;
+  --r-xl:32px; --r-l:22px; --r-m:14px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--hueso);color:var(--texto);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;color:var(--carbon)}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.06;letter-spacing:-.02em}
+h3{font-size:1.5rem;line-height:1.2;letter-spacing:-.01em}
+p{margin:0 0 1em}
+.env{max-width:var(--ancho);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.sec{padding:clamp(80px,11vw,150px) 0}
+.entradilla{font-size:1.15rem;color:var(--texto-2);max-width:46ch}
+.etiqueta{display:inline-flex;align-items:center;gap:10px;font-size:.95rem;font-weight:600;color:var(--topo);margin-bottom:22px}
+.etiqueta::before{content:"";width:28px;height:1.5px;background:currentColor}
+:focus-visible{outline:2.5px solid var(--coral);outline-offset:3px;border-radius:8px}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font:600 1rem/1 var(--sans);text-decoration:none;border:0;cursor:pointer;transition:transform .12s var(--ease),background-color .25s,color .25s,box-shadow .25s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-claro{background:var(--blanco);color:var(--carbon)}
+.btn-claro:hover{background:var(--piedra)}
+.btn-oscuro{background:var(--carbon);color:var(--blanco)}
+.btn-oscuro:hover{background:#000}
+.btn-cristal{background:rgba(255,255,255,.14);color:var(--blanco);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.btn-cristal:hover{background:rgba(255,255,255,.24)}
+.btn-linea{background:transparent;color:var(--carbon);box-shadow:inset 0 0 0 1.5px var(--topo-claro)}
+.btn-linea:hover{box-shadow:inset 0 0 0 1.5px var(--carbon)}
+
+/* Navegación flotante */
+.nav{position:fixed;top:16px;left:0;right:0;z-index:80;transition:transform .4s var(--ease)}
+.nav .env{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:block;width:118px;height:64px;background:url(media/logo-blanco.png) left center/contain no-repeat;transition:background-image .3s}
+.nav-logo span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.nav-pastilla{display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(27,26,24,.38);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);transition:background-color .35s}
+.nav-pastilla a{padding:10px 16px;border-radius:999px;color:#fff;text-decoration:none;font-size:.95rem;font-weight:500;transition:background-color .2s}
+.nav-pastilla a:hover{background:rgba(255,255,255,.12)}
+.nav-pastilla a.btn{color:var(--carbon);padding:0 20px;min-height:42px;margin-left:6px}
+.nav.solida .nav-pastilla{background:rgba(27,26,24,.82)}
+.nav.solida .nav-logo{background-image:url(media/logo-negro.png)}
+.abrir{display:none;width:52px;height:52px;border-radius:50%;border:0;background:rgba(27,26,24,.5);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);color:#fff;cursor:pointer;place-items:center}
+@media (max-width:1020px){
+  .abrir{display:grid}
+  .nav-pastilla{position:fixed;top:84px;left:16px;right:16px;flex-direction:column;align-items:stretch;padding:12px;border-radius:var(--r-l);background:rgba(27,26,24,.92);transform-origin:top right;opacity:0;transform:scale(.96) translateY(-6px);pointer-events:none;transition:opacity .22s,transform .3s var(--ease)}
+  .nav-pastilla.abierta{opacity:1;transform:none;pointer-events:auto}
+  .nav-pastilla a{padding:15px 16px;font-size:1.1rem}
+  .nav-pastilla a.btn{margin:8px 0 0;min-height:54px}
+}
+
+/* Portada con vídeo */
+.portada{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--carbon)}
+.portada video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 30%}
+.portada::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,26,24,.5) 0%,rgba(27,26,24,0) 60%),linear-gradient(180deg,rgba(27,26,24,.55) 0%,rgba(27,26,24,.05) 30%,rgba(27,26,24,.25) 55%,rgba(27,26,24,.92) 100%)}
+.portada .env{position:relative;z-index:2;width:100%;padding-bottom:clamp(36px,6vw,64px)}
+.portada-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:40px;align-items:end}
+.portada h1{color:#fff;font-size:clamp(3rem,7.4vw,6.4rem);line-height:.98;letter-spacing:-.035em;max-width:11ch}
+.portada h1 em{font-style:italic;font-weight:400}
+.portada .sub{font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6;color:rgba(255,255,255,.86);max-width:44ch;margin:28px 0 0}
+.portada .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.tarjeta-video{justify-self:end;width:100%;max-width:330px;padding:14px;border-radius:var(--r-l);background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);text-decoration:none;color:#fff;display:block;transition:transform .15s var(--ease),background-color .25s}
+.tarjeta-video:hover{background:rgba(255,255,255,.18)}
+.tarjeta-video:active{transform:scale(.98)}
+.tarjeta-video .mini{position:relative;border-radius:var(--r-m);overflow:hidden;aspect-ratio:16/9;background:#000}
+.tarjeta-video .mini img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.tarjeta-video:hover .mini img{transform:scale(1.05)}
+.play{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:var(--carbon)}
+.play svg{width:20px;height:20px;margin-left:3px}
+.play::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);animation:latido 2.4s var(--ease) infinite}
+@keyframes latido{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.tarjeta-video b{display:block;margin:14px 4px 2px;font-weight:600}
+.tarjeta-video small{display:block;margin:0 4px 4px;color:rgba(255,255,255,.75);font-size:.9rem}
+@media (max-width:900px){
+  .portada-grid{grid-template-columns:1fr}
+  .tarjeta-video{justify-self:start;display:flex;gap:14px;align-items:center;max-width:none;padding:10px}
+  .tarjeta-video .mini{width:120px;flex:none}
+  .tarjeta-video .play{width:38px;height:38px}.tarjeta-video .play svg{width:14px;height:14px}
+  .tarjeta-video b{margin:0}
+}
+@media (prefers-reduced-motion:no-preference){
+  .portada .anima{opacity:0;transform:translateY(22px);animation:sube 1s var(--ease) forwards}
+  .portada .a2{animation-delay:.15s}.portada .a3{animation-delay:.3s}.portada .a4{animation-delay:.45s}.portada .a5{animation-delay:.65s}
+}
+@keyframes sube{to{opacity:1;transform:none}}
+
+/* Cinta de credenciales */
+.cinta{background:var(--carbon);color:var(--topo-claro);overflow:hidden;padding:20px 0;border-top:1px solid rgba(255,255,255,.06)}
+.cinta-pista{display:flex;gap:56px;width:max-content;animation:desliza 38s linear infinite}
+.cinta span{display:inline-flex;align-items:center;gap:56px;font-family:var(--serif);font-size:1.35rem;white-space:nowrap;color:#E8E3DA}
+.cinta span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--topo)}
+@keyframes desliza{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cinta-pista{animation:none}}
+
+/* Presentación en vídeo */
+.presentacion .env{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,96px);align-items:center}
+.cita-grande{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.15rem);line-height:1.3;color:var(--carbon);margin:28px 0;letter-spacing:-.01em}
+.reproductor{position:relative;border-radius:var(--r-xl);overflow:hidden;background:#000;aspect-ratio:16/9;box-shadow:0 40px 80px -40px rgba(27,26,24,.55)}
+.reproductor video{width:100%;height:100%;object-fit:cover}
+.reproductor .tapa{position:absolute;inset:0;border:0;padding:0;cursor:pointer;background:none}
+.reproductor .tapa img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.reproductor .tapa:hover img{transform:scale(1.04)}
+.reproductor .tapa .play{width:84px;height:84px;z-index:1}
+.reproductor .tapa .play svg{width:28px;height:28px}
+.reproductor .tapa::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 45%)}
+.reproductor .tapa .rotulo{z-index:1;position:absolute;left:24px;bottom:22px;color:#fff;text-align:left;font:600 1rem/1.3 var(--sans);text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.reproductor .tapa .rotulo small{display:block;font-weight:500;opacity:.85}
+.reproductor.activo .tapa{display:none}
+@media (max-width:900px){.presentacion .env{grid-template-columns:1fr}}
+
+/* Sobre mí */
+.sobre{background:var(--piedra)}
+.sobre .env{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,96px);align-items:center}
+.retrato{position:relative;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/5;background:var(--topo-claro)}
+.retrato img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.retrato .sello{position:absolute;right:18px;bottom:18px;left:18px;padding:16px 20px;border-radius:var(--r-m);background:rgba(248,246,242,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.retrato .sello b{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;color:var(--carbon)}
+.retrato .sello span{font-size:.92rem;color:var(--texto-2)}
+.sobre .texto p{font-size:1.1rem;max-width:58ch}
+.roles{list-style:none;padding:0;margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.roles li{padding:20px 22px;border-radius:var(--r-m);background:var(--hueso)}
+.roles b{display:block;font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--carbon);line-height:1.25;margin-bottom:4px}
+.roles span{font-size:.94rem;color:var(--texto-2)}
+@media (max-width:900px){.sobre .env{grid-template-columns:1fr}.retrato{max-width:460px}}
+@media (max-width:540px){.roles{grid-template-columns:1fr}}
+
+/* Terapias */
+.terapias .cabeza{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:56px}
+.rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.servicio{display:flex;flex-direction:column;background:var(--blanco);border-radius:var(--r-l);overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .35s,transform .15s var(--ease)}
+.servicio:hover{box-shadow:0 30px 60px -36px rgba(27,26,24,.45)}
+.servicio:active{transform:scale(.99)}
+.servicio figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--piedra)}
+.servicio img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.servicio:hover img{transform:scale(1.06)}
+.servicio .cuerpo{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
+.servicio h3{margin-bottom:10px}
+.servicio p{color:var(--texto-2);margin:0 0 22px;font-size:1rem}
+.servicio .mas{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.96rem;color:var(--carbon)}
+.servicio .mas svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.servicio:hover .mas svg{transform:translateX(4px)}
+@media (max-width:1000px){.rejilla{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rejilla{grid-template-columns:1fr}}
+
+/* Cómo trabajo: tarjetas apiladas */
+.proceso{background:var(--blanco)}
+.proceso .env{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,96px);align-items:start}
+.proceso .fijo{position:sticky;top:130px}
+.pila{display:grid;gap:22px}
+.paso{position:sticky;top:110px;background:var(--carbon);color:#E8E3DA;border-radius:var(--r-xl);padding:clamp(28px,3.4vw,40px);overflow:hidden;transform-origin:center top}
+.paso:nth-child(2){top:130px}.paso:nth-child(3){top:150px}
+.paso .num{font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--topo-claro)}
+.paso h3{color:#fff;margin:18px 0 10px;font-size:1.75rem}
+.paso p{color:#C9C3B8;max-width:44ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 26px}
+.chips span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-size:.9rem;color:#EDE8DF}
+.chips svg{width:15px;height:15px;color:var(--topo-claro)}
+.paso figure{margin:0;border-radius:var(--r-l);overflow:hidden;aspect-ratio:16/8}
+.paso img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.proceso .env{grid-template-columns:1fr}.proceso .fijo{position:static}.paso{position:relative;top:0!important}}
+
+/* Charlas y empresas */
+.charlas{background:var(--carbon);color:#DDD7CC}
+.charlas h2{color:#fff}
+.charlas .entradilla{color:#BDB6AA}
+.charlas .etiqueta{color:var(--topo-claro)}
+.charlas-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:end;margin-bottom:56px}
+.temas{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.temas li{padding:10px 18px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);font-size:.95rem;color:#EDE8DF}
+.galeria{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.galeria figure{margin:0;position:relative;border-radius:var(--r-xl);overflow:hidden;background:var(--carbon-2)}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.galeria figure:hover img{transform:scale(1.04)}
+.galeria .g1{aspect-ratio:13/10}
+.galeria .g2{aspect-ratio:auto}
+.galeria figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:14px 18px;border-radius:var(--r-m);background:rgba(27,26,24,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;font-size:.95rem;line-height:1.45}
+.charlas .pie-charlas{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1)}
+.charlas .pie-charlas p{margin:0;max-width:52ch;color:#BDB6AA}
+@media (max-width:900px){.charlas-grid,.galeria{grid-template-columns:1fr}.galeria .g2{aspect-ratio:4/5}}
+
+/* Redes */
+.redes .env{display:grid;grid-template-columns:auto 1fr;gap:clamp(40px,6vw,88px);align-items:center}
+.movil{width:min(320px,80vw);aspect-ratio:9/16;border-radius:40px;padding:10px;background:var(--carbon);box-shadow:0 50px 90px -40px rgba(27,26,24,.6)}
+.movil video{width:100%;height:100%;object-fit:cover;border-radius:31px;background:#000}
+.posts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0}
+.posts a{display:block;border-radius:var(--r-m);overflow:hidden;aspect-ratio:1;background:var(--piedra)}
+.posts img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.posts a:hover img{transform:scale(1.06)}
+.sociales{display:flex;gap:10px;flex-wrap:wrap}
+.sociales a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--topo);color:#fff;transition:background-color .2s,transform .12s}
+.sociales a:hover{background:var(--carbon)}
+.sociales a:active{transform:scale(.94)}
+.sociales svg{width:22px;height:22px}
+@media (max-width:900px){.redes .env{grid-template-columns:1fr}.movil{margin:0 auto}}
+@media (max-width:540px){.posts{grid-template-columns:1fr 1fr}}
+
+/* Opiniones */
+.opiniones{padding:0 0 clamp(80px,10vw,130px)}
+.banda{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:clamp(28px,4vw,48px);border-radius:var(--r-xl);background:var(--blanco)}
+.banda .corazon{width:64px;height:64px;border-radius:20px;background:#FDECEE;display:grid;place-items:center}
+.banda .corazon svg{width:30px;height:30px;color:var(--coral)}
+.banda p{margin:0;font-family:var(--serif);font-size:clamp(1.35rem,2.3vw,1.8rem);line-height:1.3;color:var(--carbon)}
+@media (max-width:760px){.banda{grid-template-columns:1fr}}
+
+/* Preguntas */
+.faq{background:var(--piedra)}
+.faq .env{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,96px)}
+.faq details{background:var(--hueso);border-radius:var(--r-m);margin-bottom:10px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 24px;font-weight:600;font-size:1.08rem;color:var(--carbon)}
+.faq summary::-webkit-details-marker{display:none}
+.faq .mas{flex:none;width:34px;height:34px;border-radius:50%;background:var(--piedra);display:grid;place-items:center;transition:transform .35s var(--ease),background-color .2s}
+.faq .mas svg{width:14px;height:14px}
+.faq details[open] .mas{transform:rotate(45deg);background:var(--carbon);color:#fff}
+.faq details p{padding:0 70px 22px 24px;margin:0;color:var(--texto-2)}
+@media (max-width:900px){.faq .env{grid-template-columns:1fr}}
+
+/* Llamada final + contacto */
+.final{position:relative;color:#fff;overflow:hidden;border-radius:var(--r-xl);margin:0 clamp(12px,2vw,24px);min-height:460px;display:flex;align-items:center}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 30%}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,26,24,.88) 0%,rgba(27,26,24,.55) 55%,rgba(27,26,24,.15) 100%)}
+.final .env{position:relative;z-index:2;width:100%}
+.final h2{color:#fff;max-width:14ch}
+.final p{color:rgba(255,255,255,.85);max-width:44ch;font-size:1.12rem;margin:22px 0 32px}
+.contacto .env{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,88px);align-items:start}
+.vias{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:10px}
+.vias a{display:flex;gap:16px;align-items:center;padding:18px 20px;border-radius:var(--r-m);background:var(--blanco);text-decoration:none;transition:transform .12s var(--ease),box-shadow .3s}
+.vias a:hover{box-shadow:0 20px 40px -30px rgba(27,26,24,.5)}
+.vias a:active{transform:scale(.985)}
+.vias .ico{width:44px;height:44px;border-radius:12px;background:var(--piedra);display:grid;place-items:center;flex:none}
+.vias svg{width:20px;height:20px;color:var(--carbon)}
+.vias b{display:block;font-weight:600}
+.vias small{color:var(--texto-2);font-size:.9rem}
+.mapa{margin-top:16px;border-radius:var(--r-l);overflow:hidden;aspect-ratio:16/10;background:var(--piedra)}
+.mapa iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.6) contrast(1.05)}
+form{background:var(--blanco);border-radius:var(--r-xl);padding:clamp(26px,4vw,48px);box-shadow:0 40px 80px -60px rgba(27,26,24,.5)}
+form h3{font-size:1.8rem}
+form .nota{color:var(--texto-2);margin:8px 0 28px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.campo{display:flex;flex-direction:column;gap:8px}
+.campo.ancho,.aviso,.consent,.rgpd,form .btn{grid-column:1/-1}
+label{font-size:.95rem;font-weight:600}
+input,select{font:inherit;font-size:1rem;color:var(--texto);min-height:54px;padding:0 16px;border-radius:12px;border:1.5px solid #DCD6CC;background:var(--hueso);width:100%;transition:border-color .15s,background-color .15s}
+input:focus,select:focus{outline:none;border-color:var(--carbon);background:#fff}
+input:user-invalid{border-color:#B4483C}
+.aviso{display:flex;gap:12px;padding:14px 16px;border-radius:12px;background:var(--piedra);font-size:.93rem;line-height:1.45;color:var(--texto)}
+.aviso svg{width:20px;height:20px;flex:none;color:var(--topo)}
+.consent{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:.93rem;color:var(--texto-2)}
+.consent input{width:20px;height:20px;min-height:0;margin:2px 0 0;accent-color:var(--carbon);flex:none}
+.rgpd{font-size:.8rem;color:var(--texto-2);line-height:1.5;margin:0}
+form .btn{width:100%;margin-top:6px}
+.ok{display:none;text-align:center;padding:30px 0}
+.ok svg{width:56px;height:56px;color:var(--carbon);margin:0 auto 18px}
+.ok p{color:var(--texto-2);margin:10px auto 0;max-width:36ch}
+form.enviado>:not(.ok){display:none}
+form.enviado .ok{display:block}
+@media (max-width:900px){.contacto .env{grid-template-columns:1fr}}
+@media (max-width:540px){.campos{grid-template-columns:1fr}}
+
+/* Pie */
+.pie{padding:0 clamp(12px,2vw,24px) clamp(12px,2vw,24px)}
+.pie-caja{background:var(--carbon);color:#BDB6AA;border-radius:var(--r-xl);padding:clamp(40px,5vw,64px) 0 28px}
+.pie-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.pie-logo{width:170px;height:100px;background:url(media/logo-blanco.png) left center/contain no-repeat}
+.pie p{max-width:34ch;margin:16px 0 0;font-size:.97rem}
+.pie h4{color:#fff;font:600 1rem/1 var(--sans);margin:8px 0 18px}
+.pie ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:.97rem}
+.pie a{text-decoration:none}
+.pie a:hover{color:#fff;text-decoration:underline}
+.pie-legal{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.88rem;color:#8F897F}
+.pie-legal span{display:flex;gap:22px;flex-wrap:wrap}
+@media (max-width:900px){.pie-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.pie-grid{grid-template-columns:1fr}}
+
+/* WhatsApp */
+.wa{position:fixed;right:18px;bottom:18px;z-index:70;width:60px;height:60px;border-radius:50%;background:#1F8F55;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .12s var(--ease),opacity .3s}
+.wa:active{transform:scale(.93)}
+.wa svg{width:30px;height:30px}
+
+/* Aparición suave de bloques al hacer scroll */
+@media (prefers-reduced-motion:no-preference){
+  .revela{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .revela.visto{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (prefers-reduced-transparency:reduce){.nav-pastilla,.tarjeta-video,.retrato .sello,.galeria figcaption{background:var(--carbon);-webkit-backdrop-filter:none;backdrop-filter:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.86l12.4-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol>
+  <symbol id="i-flecha" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5.3 8.2l1.8 1.8 3.6-3.8"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.88 2.4 1 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+  <symbol id="i-mas" viewBox="0 0 14 14"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M7 1v12M1 7h12"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="env">
+    <a class="nav-logo" href="#inicio"><span>Laura Prieto Psicología, inicio</span></a>
+    <button class="abrir" id="abrir" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16"/></svg>
+    </button>
+    <nav class="nav-pastilla" id="menu" aria-label="Principal">
+      <a href="#conoceme">Conóceme</a>
+      <a href="#terapias">Terapias</a>
+      <a href="#como-trabajo">Cómo trabajo</a>
+      <a href="#empresas">Charlas y empresas</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn btn-claro" href="#contacto">Pedir cita</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="portada">
+    <video autoplay muted loop playsinline preload="auto" poster="media/poster-presentacion.jpg" aria-hidden="true">
+      <source src="media/hero.mp4" type="video/mp4">
+    </video>
+    <div class="env">
+      <div class="portada-grid">
+        <div>
+          <h1 class="anima">Psicología con <em>humor</em> y con <em>amor</em></h1>
+          <p class="sub anima a2">Soy Laura Prieto, psicóloga general sanitaria especializada en psicología de la salud. Te acompaño en mi consulta de Benetússer (València) y por videollamada.</p>
+          <div class="acciones anima a3">
+            <a class="btn btn-claro" href="#contacto">Pedir primera cita</a>
+            <a class="btn btn-cristal" href="https://wa.me/34665181962?text=Hola%20Laura%2C%20me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+          </div>
+        </div>
+        <a class="tarjeta-video anima a5" href="#conoceme" data-reproducir>
+          <div class="mini"><img src="media/poster-presentacion.jpg" alt=""><span class="play"><svg><use href="#i-play"/></svg></span></div>
+          <div><b>Conóceme en 2 minutos</b><small>Mi vídeo de presentación</small></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta" aria-label="Credenciales">
+    <div class="cinta-pista">
+      <span>Psicóloga general sanitaria</span><span>Colegiada nº 10561</span><span>Más de 10 años en psicología de la salud</span><span>Presencial en Benetússer</span><span>Terapia online</span><span>Charlas para empresas</span>
+      <span aria-hidden="true">Psicóloga general sanitaria</span><span aria-hidden="true">Colegiada nº 10561</span><span aria-hidden="true">Más de 10 años en psicología de la salud</span><span aria-hidden="true">Presencial en Benetússer</span><span aria-hidden="true">Terapia online</span><span aria-hidden="true">Charlas para empresas</span>
+    </div>
+  </div>
+
+  <section class="presentacion sec" id="conoceme">
+    <div class="env">
+      <div class="revela">
+        <span class="etiqueta">Conóceme</span>
+        <h2>Yo también he estado al otro lado</h2>
+        <p class="cita-grande">“Desde los doce años supe que quería ayudar a las personas. Y sé lo que es pasarlo mal, porque yo también he tenido que aplicarme la psicología a mí misma.”</p>
+        <p class="entradilla">En este vídeo te cuento quién soy, por qué me dediqué a esto y cómo es trabajar conmigo.</p>
+      </div>
+      <div class="reproductor revela" id="reproductor">
+        <video id="videoPresentacion" controls playsinline preload="none" poster="media/poster-presentacion.jpg">
+          <source src="media/presentacion.mp4" type="video/mp4">
+        </video>
+        <button class="tapa" id="tapa" aria-label="Reproducir el vídeo de presentación">
+          <img src="media/poster-presentacion.jpg" alt="Laura Prieto en la Ciudad de las Artes y las Ciencias de València">
+          <span class="play"><svg><use href="#i-play"/></svg></span>
+          <span class="rotulo">Vídeo de presentación<small>1:51 · con sonido</small></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre sec" id="sobre-mi">
+    <div class="env">
+      <div class="retrato revela">
+        <img src="media/laura-retrato.jpg" alt="Laura Prieto, psicóloga" loading="lazy">
+        <div class="sello"><b>Laura Prieto Climent</b><span>Psicóloga general sanitaria, colegiada nº 10561</span></div>
+      </div>
+      <div class="texto revela">
+        <span class="etiqueta">Sobre mí</span>
+        <h2>Cercana, directa y con los pies en la tierra</h2>
+        <p style="margin-top:26px">Llevo más de una década trabajando en psicología de la salud. He acompañado a personas con ansiedad, estrés, rupturas, duelos, crisis personales o miedo a ser juzgadas por quiénes son.</p>
+        <p>Mi forma de trabajar mezcla rigor profesional con algo que para mí es imprescindible: humor y cariño. Creo que en terapia se puede hablar de lo difícil sin perder la cercanía, y que aprender a comunicarte, poner límites y volver a confiar en ti es posible paso a paso.</p>
+        <ul class="roles">
+          <li><b>Directora de Laura Prieto Psicología</b><span>Consulta en Benetússer y online</span></li>
+          <li><b>Fundadora del Instituto Pensamiento Creativo</b><span>Formación y divulgación en psicología</span></li>
+          <li><b>Colaboradora de Accesiblemente</b><span>Plataforma online para acercar la psicología a todo el mundo</span></li>
+          <li><b>Formación y docencia</b><span>Charlas sobre inteligencia emocional y bienestar</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="terapias sec" id="terapias">
+    <div class="env">
+      <div class="cabeza revela">
+        <div><span class="etiqueta">Terapias</span><h2>En qué te puedo acompañar</h2></div>
+        <p class="entradilla" style="margin:0">Cada persona llega con su historia. Estas son las áreas en las que trabajo, siempre adaptadas a ti.</p>
+      </div>
+      <div class="rejilla">
+        <a class="servicio revela" href="#contacto">
+          <figure><img src="media/individual.jpg" alt="Mujer relajada con las manos detrás de la cabeza" loading="lazy"></figure>
+          <div class="cuerpo"><h3>Terapia individual</h3><p>Ansiedad, estrés, tristeza, autoestima, duelo o momentos de cambio. Un espacio para ordenar lo que sientes y encontrar herramientas que te sirvan.</p><span class="mas">Pedir cita <svg><use href="#i-flecha"/></svg></span></div>
+        </a>
+        <a class="servicio revela" href="#contacto">
+          <figure><img src="media/pareja.jpg" alt="Persona sentada en un sofá con una carpeta" loading="lazy"></figure>
+          <div class="cuerpo"><h3>Terapia de pareja</h3><p>Cuando las discusiones se repiten o cuesta entenderse. Trabajamos la comunicación y lo que cada uno necesita de la relación.</p><span class="mas">Pedir cita <svg><use href="#i-flecha"/></svg></span></div>
+        </a>
+        <a class="servicio revela" href="#contacto">
+          <figure><img src="media/infancia.jpg" alt="Niña leyendo un libro" loading="lazy"></figure>
+          <div class="cuerpo"><h3>Infancia y adolescencia</h3><p>Emociones, conducta, habilidades sociales y orientación escolar, contando con la familia durante todo el proceso.</p><span class="mas">Pedir cita <svg><use href="#i-flecha"/></svg></span></div>
+        </a>
+        <a class="servicio revela" href="#contacto">
+          <figure><img src="media/laboral.jpg" alt="Mujer agobiada frente a la ventana de una oficina" loading="lazy"></figure>
+          <div class="cuerpo"><h3>Estrés laboral</h3><p>Cuando el trabajo no te reconoce, te desborda o no te deja desconectar. Aprendemos a gestionar la presión y a poner límites.</p><span class="mas">Pedir cita <svg><use href="#i-flecha"/></svg></span></div>
+        </a>
+        <a class="servicio revela" href="#contacto">
+          <figure><img src="media/diversidad.jpg" alt="Persona mirando hacia los edificios de la Ciudad de las Artes" loading="lazy"></figure>
+          <div class="cuerpo"><h3>Diversidad afectivo-sexual</h3><p>Un espacio seguro y sin juicios para personas LGTBI+, para hablar de identidad, relaciones o del miedo a ser juzgado.</p><span class="mas">Pedir cita <svg><use href="#i-flecha"/></svg></span></div>
+        </a>
+        <a class="servicio revela" href="#contacto">
+          <figure><img src="media/relajacion.jpg" alt="Mano acariciando un campo de trigo" loading="lazy"></figure>
+          <div class="cuerpo"><h3>Relajación y hábitos saludables</h3><p>Técnicas de relajación, descanso y rutinas que cuidan tu salud emocional en el día a día.</p><span class="mas">Pedir cita <svg><use href="#i-flecha"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso sec" id="como-trabajo">
+    <div class="env">
+      <div class="fijo revela">
+        <span class="etiqueta">Cómo trabajo</span>
+        <h2>Empezar es más fácil de lo que crees</h2>
+        <p class="entradilla" style="margin-top:22px">No necesitas saber explicar lo que te pasa. Para eso estoy yo. Solo tienes que dar el primer paso.</p>
+        <a class="btn btn-oscuro" href="#contacto" style="margin-top:14px">Pedir primera cita</a>
+      </div>
+      <div class="pila">
+        <article class="paso">
+          <span class="num">01</span>
+          <h3>Escríbeme o llámame</h3>
+          <p>Por WhatsApp, por teléfono o con el formulario. Solo necesito tu nombre y cómo contactarte.</p>
+          <div class="chips"><span><svg><use href="#i-check"/></svg>Respuesta rápida</span><span><svg><use href="#i-check"/></svg>Sin compromiso</span></div>
+          <figure><img src="media/paso1.jpg" alt="Mano sujetando un móvil" loading="lazy"></figure>
+        </article>
+        <article class="paso">
+          <span class="num">02</span>
+          <h3>Primera sesión para conocernos</h3>
+          <p>Me cuentas lo que te trae, te explico cómo trabajo y vemos juntos qué necesitas. En consulta o por videollamada.</p>
+          <div class="chips"><span><svg><use href="#i-check"/></svg>Presencial u online</span><span><svg><use href="#i-check"/></svg>A tu ritmo</span></div>
+          <figure><img src="media/paso2.jpg" alt="Persona leyendo un libro" loading="lazy"></figure>
+        </article>
+        <article class="paso">
+          <span class="num">03</span>
+          <h3>Un plan hecho para ti</h3>
+          <p>Definimos objetivos, la frecuencia de las sesiones y las herramientas que mejor encajan contigo. Y lo revisamos juntos por el camino.</p>
+          <div class="chips"><span><svg><use href="#i-check"/></svg>Objetivos claros</span><span><svg><use href="#i-check"/></svg>Acompañamiento continuo</span></div>
+          <figure><img src="media/paso3.jpg" alt="Mujer de espaldas mirando al cielo" loading="lazy"></figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="charlas sec" id="empresas">
+    <div class="env">
+      <div class="charlas-grid revela">
+        <div>
+          <span class="etiqueta">Charlas y empresas</span>
+          <h2>Psicología también fuera de la consulta</h2>
+        </div>
+        <div>
+          <p class="entradilla">Imparto charlas y formación para empresas, asociaciones y centros educativos. Me gusta colaborar con organizaciones comprometidas con la salud, el bienestar, la igualdad y la educación de calidad.</p>
+          <ul class="temas">
+            <li>Estrés laboral</li><li>Inteligencia emocional</li><li>Comunicación eficaz</li><li>Adaptación al cambio</li><li>Igualdad y diversidad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="galeria">
+        <figure class="g1 revela"><img src="media/teresa-perales.jpg" alt="Laura Prieto junto a Teresa Perales y otra asistente en una jornada" loading="lazy"><figcaption>Jornada «Abrazar los cambios» con la nadadora Teresa Perales</figcaption></figure>
+        <figure class="g2 revela"><img src="media/congreso.jpg" alt="Laura Prieto con otros asistentes en el congreso de AECTA" loading="lazy"><figcaption>VII Congreso de Tecnologías Emergentes, La Harinera (València)</figcaption></figure>
+      </div>
+      <div class="pie-charlas">
+        <p>¿Quieres una charla o un programa de bienestar para tu equipo? Cuéntame qué necesitáis y te preparo una propuesta.</p>
+        <a class="btn btn-claro" href="#contacto">Solicitar información</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="redes sec" id="redes">
+    <div class="env">
+      <div class="movil revela">
+        <video controls playsinline preload="none" poster="media/poster-reel.jpg">
+          <source src="media/reel-orgullo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="revela">
+        <span class="etiqueta">En redes</span>
+        <h2>Psicología para tu día a día</h2>
+        <p class="entradilla" style="margin-top:22px">Comparto reflexiones, consejos y vídeos sobre emociones, relaciones y bienestar. Sígueme para llevarte un poco de psicología a tu rutina.</p>
+        <div class="posts">
+          <a href="#" aria-label="Publicación: humor y amor para una vida mejor"><img src="media/post-humor.jpg" alt="" loading="lazy"></a>
+          <a href="#" aria-label="Publicación: estrés laboral"><img src="media/post-estres.jpg" alt="" loading="lazy"></a>
+          <a href="#" aria-label="Publicación: el amor maduro construye"><img src="media/post-amor.jpg" alt="" loading="lazy"></a>
+          <a href="#" aria-label="Publicación: objetivos de desarrollo sostenible"><img src="media/post-ods.jpg" alt="" loading="lazy"></a>
+        </div>
+        <div class="sociales">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="opiniones">
+    <div class="env">
+      <div class="banda revela">
+        <span class="corazon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.4 3 5 6.4 5c2 0 3.6 1.1 4.4 2.6h.4C12 6.1 13.6 5 15.6 5 19 5 21 8.4 19.6 11.7 17.5 16.4 12 21 12 21z"/></svg></span>
+        <p>Lee lo que cuentan las personas que han pasado por la consulta.</p>
+        <a class="btn btn-linea" href="https://www.google.com/search?q=Laura+Prieto+Climent+psic%C3%B3loga+Benet%C3%BAsser" target="_blank" rel="noopener">Ver opiniones en Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq sec" id="preguntas">
+    <div class="env">
+      <div class="revela">
+        <span class="etiqueta">Preguntas frecuentes</span>
+        <h2>Lo que suelen preguntarme</h2>
+        <p class="entradilla" style="margin-top:22px">Si tienes otra duda, escríbeme y te respondo personalmente.</p>
+      </div>
+      <div class="revela">
+        <details><summary>¿Necesito que me derive un médico?<span class="mas"><svg><use href="#i-mas"/></svg></span></summary><p>No. Puedes pedir cita directamente, sin informe ni derivación previa.</p></details>
+        <details><summary>¿Cómo es la primera sesión?<span class="mas"><svg><use href="#i-mas"/></svg></span></summary><p>Es una conversación para conocernos. Me cuentas lo que quieras compartir, te explico cómo trabajo y vemos juntos si tiene sentido empezar. No tienes que traer nada preparado.</p></details>
+        <details><summary>¿Lo que hablemos es confidencial?<span class="mas"><svg><use href="#i-mas"/></svg></span></summary><p>Sí. Como psicóloga sanitaria estoy sujeta al secreto profesional y al código deontológico, y tus datos se tratan según la normativa de protección de datos.</p></details>
+        <details><summary>¿Haces terapia online?<span class="mas"><svg><use href="#i-mas"/></svg></span></summary><p>Sí. Las sesiones por videollamada son una buena opción si te cuesta desplazarte o tienes poco tiempo. Solo necesitas un lugar tranquilo y conexión a internet.</p></details>
+        <details><summary>¿Atiendes a menores de edad?<span class="mas"><svg><use href="#i-mas"/></svg></span></summary><p>Sí. Para empezar necesito el consentimiento de los padres o tutores, y la familia participa durante el proceso.</p></details>
+        <details><summary>¿Cuánto cuesta una sesión?<span class="mas"><svg><use href="#i-mas"/></svg></span></summary><p>Te informo de las tarifas cuando me contactes para pedir cita, sin ningún compromiso.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final revela" aria-label="Pide tu cita">
+    <img src="media/poster-presentacion.jpg" alt="" loading="lazy">
+    <div class="env">
+      <h2>Date permiso para empezar a cuidarte</h2>
+      <p>Dar el primer paso es lo más difícil. A partir de ahí, lo hacemos juntas o juntos.</p>
+      <a class="btn btn-claro" href="#contacto">Pedir primera cita</a>
+    </div>
+  </section>
+
+  <section class="contacto sec" id="contacto">
+    <div class="env">
+      <div class="revela">
+        <span class="etiqueta">Contacto</span>
+        <h2>Hablemos</h2>
+        <p class="entradilla" style="margin-top:22px">Escríbeme por la vía que te resulte más cómoda. Atiendo con cita previa de lunes a viernes, de 8:00 a 22:00.</p>
+        <ul class="vias">
+          <li><a href="https://wa.me/34665181962?text=Hola%20Laura%2C%20me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-wa"/></svg></span><span><b>665 18 19 62</b><small>WhatsApp y móvil</small></span></a></li>
+          <li><a href="mailto:lpc.psic@gmail.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><b>lpc.psic@gmail.com</b><small>Correo electrónico</small></span></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Cam%C3%AD%20Nou%2065%2C%2046910%20Benet%C3%BAsser" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11.8a7 7 0 1 0-14 0C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span><span><b>Av. Camí Nou, 65, 2.º 3.ª</b><small>46910 Benetússer (València)</small></span></a></li>
+        </ul>
+        <div class="mapa"><iframe title="Mapa de la consulta" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Cam%C3%AD%20Nou%2065%2C%2046910%20Benet%C3%BAsser%2C%20Valencia&output=embed"></iframe></div>
+      </div>
+
+      <form id="form" class="revela" novalidate>
+        <h3>Solicitud de cita</h3>
+        <p class="nota">Déjame tus datos y te contacto para buscar un hueco.</p>
+        <div class="campos">
+          <div class="campo ancho"><label for="nombre">Nombre</label><input id="nombre" autocomplete="given-name" required></div>
+          <div class="campo"><label for="tel">Teléfono</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel" required></div>
+          <div class="campo"><label for="email">Email <span style="font-weight:400;color:var(--texto-2)">(opcional)</span></label><input id="email" type="email" autocomplete="email"></div>
+          <div class="campo"><label for="tipo">Me interesa</label>
+            <select id="tipo"><option>Terapia presencial</option><option>Terapia online</option><option>Charla o formación para empresas</option></select></div>
+          <div class="campo"><label for="franja">Mejor hora para llamarte</label>
+            <select id="franja"><option>Mañanas</option><option>Tardes</option><option>A partir de las 18:00</option></select></div>
+          <div class="aviso"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.2v.1"/></svg><span>No hace falta que me cuentes el motivo de la consulta por aquí. Lo hablaremos con calma en la primera sesión.</span></div>
+          <label class="consent"><input type="checkbox" required><span>He leído y acepto la <a href="#">política de privacidad</a>.</span></label>
+          <p class="rgpd">Responsable: Laura Prieto Climent. Finalidad: responder a tu solicitud y gestionar la cita. Legitimación: tu consentimiento. Destinatarios: no se ceden datos a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión y demás, escribiendo a lpc.psic@gmail.com.</p>
+          <button class="btn btn-oscuro" type="submit">Enviar solicitud</button>
+        </div>
+        <div class="ok" role="status" aria-live="polite">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="28" r="25"/><path d="M18 28.5l7 7 13-15"/></svg>
+          <h3>Solicitud enviada</h3>
+          <p>Gracias. Te contactaré en la franja que has elegido para concretar la cita.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="pie-caja">
+    <div class="env">
+      <div class="pie-grid">
+        <div>
+          <div class="pie-logo" role="img" aria-label="Laura Prieto Psicología"></div>
+          <p>Psicóloga general sanitaria especializada en psicología de la salud. Colegiada nº 10561 en el Col·legi Oficial de Psicologia de la Comunitat Valenciana.</p>
+        </div>
+        <div><h4>Navegación</h4><ul><li><a href="#conoceme">Conóceme</a></li><li><a href="#terapias">Terapias</a></li><li><a href="#como-trabajo">Cómo trabajo</a></li><li><a href="#empresas">Charlas y empresas</a></li></ul></div>
+        <div><h4>Consulta</h4><ul><li>Av. Camí Nou, 65, 2.º 3.ª</li><li>46910 Benetússer (València)</li><li>Lunes a viernes, 8:00 a 22:00</li><li>Terapia online</li></ul></div>
+        <div><h4>Contacto</h4><ul><li><a href="tel:+34665181962">665 18 19 62</a></li><li><a href="mailto:lpc.psic@gmail.com">lpc.psic@gmail.com</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
+      </div>
+      <div class="pie-legal">
+        <span>© 2026 Laura Prieto Psicología</span>
+        <span><a href="#">Aviso legal</a><a href="#">Política de privacidad</a><a href="#">Cookies</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/34665181962?text=Hola%20Laura%2C%20me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+// Navegación: se vuelve sólida al salir de la portada
+const nav=document.getElementById('nav');
+const portada=document.querySelector('.portada');
+new IntersectionObserver(([e])=>nav.classList.toggle('solida',!e.isIntersecting),{rootMargin:'-90px 0px 0px 0px'}).observe(portada);
+
+// Menú móvil
+const abrir=document.getElementById('abrir'),menu=document.getElementById('menu');
+abrir.addEventListener('click',()=>{const a=menu.classList.toggle('abierta');abrir.setAttribute('aria-expanded',a)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('abierta');abrir.setAttribute('aria-expanded',false)}));
+
+// Vídeo de presentación: la tapa y la tarjeta de la portada lo reproducen con sonido
+const rep=document.getElementById('reproductor'),vid=document.getElementById('videoPresentacion');
+function reproducir(){rep.classList.add('activo');vid.play().catch(()=>{})}
+document.getElementById('tapa').addEventListener('click',reproducir);
+document.querySelector('[data-reproducir]').addEventListener('click',e=>{
+  e.preventDefault();
+  rep.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+  setTimeout(reproducir,500);
+});
+
+// El vídeo de fondo se pausa si no está a la vista
+const fondo=portada.querySelector('video');
+new IntersectionObserver(([e])=>{e.isIntersecting?fondo.play().catch(()=>{}):fondo.pause()}).observe(portada);
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){fondo.removeAttribute('autoplay');fondo.pause()}
+
+// Aparición al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+
+// Tarjetas apiladas: la de atrás se encoge un poco al llegar la siguiente
+const pasos=[...document.querySelectorAll('.paso')];
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches && innerWidth>900){
+  addEventListener('scroll',()=>{
+    pasos.forEach((p,i)=>{const sig=pasos[i+1];if(!sig)return;
+      const d=sig.getBoundingClientRect().top-p.getBoundingClientRect().top;
+      const t=Math.min(1,Math.max(0,1-d/p.offsetHeight));
+      p.style.transform=`scale(${1-t*.05})`;p.style.filter=`brightness(${1-t*.25})`;});
+  },{passive:true});
+}
+
+// Formulario de demostración (en WordPress se sustituye por el formulario de Elementor)
+const form=document.getElementById('form');
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.checkValidity()){form.reportValidity();return}form.classList.add('enviado')});
+</script>
+</body>
+</html>
