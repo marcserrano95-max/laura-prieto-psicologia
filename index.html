@@ -396,6 +396,27 @@ form.enviado .ok{display:block}
   .galeria figure:hover img{scale:1.2}
   .galeria figcaption{opacity:0;translate:0 12px;transition:opacity .8s var(--ease) calc(var(--d,0s) + .7s),translate .8s var(--ease) calc(var(--d,0s) + .7s)}
   .galeria figure.visto figcaption{opacity:1;translate:0 0}
+
+  /* Redes: el móvil entra girado y flota; las publicaciones se reparten como cartas y se mueven con el scroll */
+  .movil.revela{transform:none;translate:-70px 40px;rotate:-7deg;transition:opacity 1s var(--ease),translate 1.3s var(--ease),rotate 1.5s var(--ease)}
+  .movil.revela.visto{translate:0 var(--my,0px);rotate:var(--mr,0deg);transition:opacity 1s var(--ease),translate .9s var(--ease),rotate .9s var(--ease);animation:flota 6s ease-in-out 1.5s infinite alternate}
+  @keyframes flota{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+  .movil{position:relative}
+  .movil::before{content:"";position:absolute;inset:8% -14% -6% -14%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(239,100,112,.20),transparent);filter:blur(10px);animation:halo 7s ease-in-out infinite alternate}
+  @keyframes halo{from{opacity:.5;scale:.92}to{opacity:1;scale:1.06}}
+  .posts a{position:relative;opacity:0;translate:0 60px;rotate:var(--rot,0deg);scale:.84;transform:translateY(var(--py,0px));transition:opacity .8s var(--ease) var(--d,0s),translate 1.1s var(--ease) var(--d,0s),rotate 1.2s var(--ease) var(--d,0s),scale 1.1s var(--ease) var(--d,0s),box-shadow .4s}
+  .posts.visto a{opacity:1;translate:0 0;rotate:0deg;scale:1}
+  .posts.listo a{transition:opacity .4s,translate .45s var(--ease),rotate .45s var(--ease),scale .45s var(--ease),box-shadow .4s}
+  .posts.listo a:hover{translate:0 -8px;rotate:var(--hr,0deg);scale:1.04;box-shadow:0 26px 44px -24px rgba(27,26,24,.55);z-index:2}
+  .posts img,.posts a:hover img{transform:none}
+  .posts img{animation:acerca 12s ease-in-out infinite alternate;animation-delay:var(--kb,0s)}
+  @keyframes acerca{from{scale:1}to{scale:1.1}}
+  .posts a::after{content:"Ver en Instagram";position:absolute;inset:auto 8px 8px 8px;padding:7px 8px;border-radius:10px;background:rgba(27,26,24,.72);color:#fff;font-size:.74rem;font-weight:600;text-align:center;opacity:0;translate:0 8px;transition:opacity .35s,translate .35s var(--ease)}
+  .posts a:hover::after,.posts a:focus-visible::after{opacity:1;translate:0 0}
+  .sociales a{opacity:0;scale:.5;transition:opacity .5s var(--ease),scale .6s cubic-bezier(.34,1.56,.64,1),background-color .2s,transform .12s}
+  .sociales.visto a{opacity:1;scale:1}
+  .sociales.visto a:nth-child(2){transition-delay:.1s}.sociales.visto a:nth-child(3){transition-delay:.2s}
+  .sociales.visto a:hover{scale:1.1;transition-delay:0s}
 }
 </style>
 </head>
@@ -804,6 +825,21 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
       const t=((b.top+b.height/2)-vh/2)/(vh/2+b.height/2);img.style.setProperty('--py',(-t*r).toFixed(1)+'px');});};
   addEventListener('scroll',()=>{if(!pendiente){pendiente=true;requestAnimationFrame(mover)}},{passive:true});
   addEventListener('resize',mover);mover();
+}
+
+// Redes: publicaciones repartidas como cartas, móvil que flota y paralaje suave
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const posts=document.querySelector('.posts'),soc=document.querySelector('.sociales'),movil=document.querySelector('.movil'),redes=document.getElementById('redes');
+  const giros=[-11,7,-6,10],hover=[-2,1.5,-1.5,2];
+  [...posts.children].forEach((a,i)=>{a.style.setProperty('--d',(0.15+i*0.12)+'s');a.style.setProperty('--rot',giros[i%4]+'deg');a.style.setProperty('--hr',hover[i%4]+'deg');a.querySelector('img').style.setProperty('--kb',(-i*3)+'s')});
+  const ioRedes=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visto');if(e.target===posts)setTimeout(()=>posts.classList.add('listo'),1800);ioRedes.unobserve(e.target)}}),{threshold:.25});
+  ioRedes.observe(posts);ioRedes.observe(soc);
+  let pend=false;
+  const moverRedes=()=>{pend=false;const b=redes.getBoundingClientRect(),vh=innerHeight;if(b.bottom<0||b.top>vh)return;
+    const t=Math.max(-1,Math.min(1,((b.top+b.height/2)-vh/2)/(vh/2+b.height/2)));
+    movil.style.setProperty('--my',(t*-36).toFixed(1)+'px');movil.style.setProperty('--mr',(t*3.5).toFixed(2)+'deg');
+    [...posts.children].forEach((a,i)=>a.style.setProperty('--py',((i%2?1:-1)*t*18).toFixed(1)+'px'));};
+  addEventListener('scroll',()=>{if(!pend){pend=true;requestAnimationFrame(moverRedes)}},{passive:true});moverRedes();
 }
 </script>
 </body>
